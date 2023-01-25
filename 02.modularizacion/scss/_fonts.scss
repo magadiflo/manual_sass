@@ -1,0 +1,17 @@
+//* Un módulo o llamado también archivo secundario, es un archivo que inicia con _
+
+//* Para que el compilador de Sass no compile un módulo por separado, 
+//* tiene que saber qué archivo es un módulo. Para ello simplemente 
+//* vamos a nombrar el módulo comenzando por un guión bajo "_".
+
+//* Todos los archivos que comiencen con un _ no generarán nuevos archivos .css,
+//* es decir, únicamente el estilo.scss (el que no lleva _) generará una salida 
+//* en estilo.css
+
+
+$f-normal: 16pt;
+$f-pequena: 12pt;
+$f-grande: 20pt;
+
+$tipo-general: 'Trebuchet MS', 'Lucida Sans Unicode', Arial, sans-serif;
+$tipo-alternativa: 'Times New Roman', serif;

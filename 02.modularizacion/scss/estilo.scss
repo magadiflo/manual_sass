@@ -1,0 +1,16 @@
+//* Este archivo (que no lleva un _) sí generará una salida en estilo.css
+
+
+//* Importando módulo (archivo secundario)
+@import 'variables'; //* Sin el _ y sin la extensión. Es el archivo _variables.scss
+@import 'fonts';
+
+body {
+    font-size: $f-normal;
+    font-family: $tipo-general;
+}
+
+h1 {
+    font-size: $f-grande;
+    font-family: $tipo-alternativa;
+}
