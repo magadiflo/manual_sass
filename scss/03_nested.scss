@@ -1,0 +1,65 @@
+//* Nested - Anidación de selectores en SASS
+
+//* REGLA: No debemos definir estilos CSS a selectores que aniden más de tres elementos.
+
+.cajadestacada {
+    background-color: red;
+
+    header {
+        background-color: black;
+        color: white;
+
+        a {
+            color: #f66;
+        }
+    }
+}
+
+//* Referencia al selector padre &
+//*
+//* Esto nos sirve para que, al definir código anidado, podamos continuar en el uso del 
+//* selector sobre el que estamos trabajando, a fin de no repetirlo de nuevo. Seguro 
+//* que con un ejemplo conseguimos entenderlo bien.
+//*
+//* Simplemente, SASS, cuando vea el caracter & entenderá que tiene que sustituirlo
+//* por el selector padre de esta anidación.
+a.dinamico {
+    color: red;
+    &:hover {
+        background-color: #f66;
+        color: #FFF;
+    }
+}
+
+.form {
+    margin: 10px;
+    padding: 15px;
+
+    &--black {
+        color: #FFF;
+        background-color: #000;
+    }
+
+    &__submit {
+        color: red;
+        
+        &--desactivado {
+            color: #999;
+        }
+    }
+    
+}
+
+//* Propiedades anidadas (:)
+//*
+//* Cuando tenemos propiedades que comparten una misma raíz, como:
+//* font-size, font-family, etc. Podemos anidarlas
+h2 {
+    color: #666;
+
+    font: {
+        family: verdana;
+        weight: bold;
+        size: 0.9em;
+    }
+}
