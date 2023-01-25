@@ -1,0 +1,35 @@
+//* Variables
+$color-primario: #55A;
+$color-secundario: #6B6;
+$color-texto: #666;
+$color-blanco: #FFF;
+
+$espaciado-estandar: 10px;
+$espaciado-doble: 20px;
+
+$fuente-normal: 1em;
+$fuente-pequeña: 0.8em;
+$fuente-grande: 1.4em;
+
+$tipografia-general: arial, verdana, sans-serif;
+$tipografia-alternativa: 'Times New Roman', Times, serif;
+
+body {
+    color: $color-texto;
+    font-family: $tipografia-general;
+}
+
+h1 {
+    background-color: $color-primario;
+    color: $color-blanco;
+    font-family: $tipografia-general;
+    font-size: $fuente-grande;
+    padding: $espaciado-estandar;
+    text-transform: uppercase;
+    border-radius: 12px;
+}
+
+div.destacado {
+    border: 1px solid $color-secundario;
+    padding: $espaciado-estandar $espaciado-doble;
+}
