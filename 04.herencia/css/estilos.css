@@ -1,0 +1,46 @@
+h2, h1 {
+  background-color: blanchedalmond;
+  color: red;
+  font-family: "Times New Roman", Times, serif;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+.caja {
+  padding: 10px;
+  font-size: 1.2em;
+}
+.caja-borde {
+  border: 1px solid red;
+}
+.caja-fondo {
+  background-color: #f0f0f0;
+}
+.caja-espaciado-extra {
+  padding: 20px;
+}
+
+.cajita-combinada, .cajita-espaciado-extra, .cajita-fondo, .cajita-borde, .cajita {
+  padding: 10px;
+  font-size: 1.2em;
+}
+
+.cajita-combinada, .cajita-borde {
+  border: 1px solid red;
+}
+
+.cajita-combinada, .cajita-fondo {
+  background-color: #f0f0f0;
+}
+
+.cajita-combinada, .cajita-espaciado-extra {
+  padding: 20px;
+}
+
+/*# sourceMappingURL=estilos.css.map */

@@ -1,0 +1,95 @@
+//* Clases Placeholder
+//* ******************
+//* Este tipo de clases CSS son específicas de SASS, no existen
+//* en el lenguaje CSS de momento. Son declaraciones que podemos usar
+//* agrupando diversas reglas de estilo.
+//* Solo se escribirá en el CSS resultante cuando sean usadas.
+
+//* La sintaxis para crearla debe anteponerle un símbolo %.
+//* Esta declaración indica un estilo de base para nuestros encabezados 
+//* y nos sirve para poder agregarla en donde la necesitemos.
+//* Si la dejamos tal cual, sin usarlo, no generará salida en el css resultante.
+%heading {
+    background-color: blanchedalmond;
+    color: red;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+//* Directiva @extend de SASS
+//* *************************
+//* Nos permite extender código de cierta declaración de css con nuevos estilos.
+h1 {
+    @extend %heading;
+    font-size: 2em;
+}
+
+h2 {
+    @extend %heading;
+    font-size: 1.5em;
+}
+
+//* NOTA:
+//* Lo interesante de este mecanismo proporcionado por @extend es que Sass te produce un código 
+//* optimizado, ya que las reglas de estilo no se repiten realmente dos veces en cada selector, 
+//* tal como lo hace el @mixin; en este caso, el código producido mantendrá las buenas prácticas.
+
+//* Ejemplo de algo común
+//* De esta manera podría quedar nuestro elemento html, con muchas clases
+//* <div class="caja caja-borde caja-fondo caja-espaciado-extra">...</div>
+.caja {
+    padding: 10px;
+    font-size: 1.2em;
+    &-borde {
+        border: 1px solid red;
+    }
+    &-fondo {
+        background-color: #f0f0f0;
+    }
+    &-espaciado-extra {
+        padding: 20px;
+    }
+}
+
+//* Usando las clases placeholder
+//* Aquí se reutiliza tremendamente, usando solo una clase para el elemento html
+//* <div class="cajita-borde">Cajita borde</div>
+//* <div class="cajita-combinada">Cajita combinada</div>
+%cajita {
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+%cajita-borde {
+    border: 1px solid red;
+}
+
+%cajita-fondo {
+    background-color: #f0f0f0;
+}
+
+%cajita-espacio-extra {
+    padding: 20px;
+}
+
+.cajita {
+    @extend %cajita;
+    &-borde {
+        @extend %cajita;
+        @extend %cajita-borde;
+    }
+    &-fondo {
+        @extend %cajita;
+        @extend %cajita-fondo;
+    }
+    &-espaciado-extra {
+        @extend %cajita;
+        @extend %cajita-espacio-extra;
+    }
+    &-combinada {
+        @extend %cajita;
+        @extend %cajita-borde;
+        @extend %cajita-fondo;
+        @extend %cajita-espacio-extra;        
+    }
+
+}
