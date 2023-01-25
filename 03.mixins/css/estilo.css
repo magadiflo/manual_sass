@@ -1,0 +1,76 @@
+h1.invertido {
+  font-size: 1.3em;
+  padding: 15px;
+  background-color: #111;
+  color: #EEE;
+}
+
+div.invertido {
+  padding: 5px;
+  background-color: #111;
+  color: #EEE;
+}
+
+blockquote {
+  margin: 2em 3em;
+  padding: 20px;
+  text-align: center;
+  background-color: #111;
+  color: #EEE;
+}
+
+.escala {
+  -webkit-transform: scale(2, 3);
+  -ms-transform: scale(2, 3);
+  transform: scale(2, 3);
+}
+
+h1.invertido {
+  color: blue;
+  -webkit-transform: rotate(22deg);
+  -ms-transform: rotate(22deg);
+  transform: rotate(22deg);
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.8em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+@media (min-width: 800px) {
+  h1 {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 1.8em;
+  }
+  h3 {
+    font-size: 1.5em;
+  }
+  body {
+    background-color: red;
+  }
+}
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 2.5em;
+  }
+  h2 {
+    font-size: 2.3em;
+  }
+  h3 {
+    font-size: 2em;
+  }
+  body {
+    background-color: yellow;
+  }
+}
+
+/*# sourceMappingURL=estilo.css.map */

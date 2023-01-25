@@ -1,0 +1,81 @@
+//* Los mixins, nos permiten reutirlizar código; serían como funciones.
+//*
+//* Podemos escribirun mixin e invocarlo tantas veces como sea necesario,
+//* produciendo una salida CSS. Puede recibir parámetros.
+
+//* Ejmp. Este mixin simplemente define dos propiedades de CSS, 
+//* que serán incluidas allí donde se invoque.
+
+//* Mixin sin parámetros
+@mixin color-invertido {
+    background-color: #111;
+    color: #EEE;
+}
+
+h1.invertido {
+    font-size: 1.3em;
+    padding: 15px;
+    @include color-invertido();
+}
+
+div.invertido {
+    padding: 5px;
+    @include color-invertido();
+}
+
+blockquote {
+    margin: 2em 3em;
+    padding: 20px;
+    text-align: center;
+    @include color-invertido();
+}
+
+
+//* Paso de parámetros en un mixin
+@mixin transformar($propiedad) {
+    -webkit-transform: $propiedad;
+    -ms-transform: $propiedad;
+    transform: $propiedad;
+}
+
+.escala {
+    @include transformar(scale(2, 3));
+}
+
+h1.invertido {
+    color: blue;
+    @include transformar(rotate(22deg));
+}
+
+//* Los mixin pueden producir todo tipo de salida
+@mixin encabezados($tamanio) {
+    h1 {
+        font-size: $tamanio;
+    }
+
+    h2 {
+        font-size: $tamanio - 0.2;
+    }
+
+    h3 {
+        font-size: $tamanio - 0.5;
+    }
+}
+
+//* Incluimos los selectores del mixn en el archivo css con un tamaño base para el h1
+@include encabezados(2em);
+
+//* Podemos usar media quey para sacar mejor provecho de ese mixin
+@media(min-width: 800px) {
+    @include encabezados(2em);
+    body {
+        background-color: red;
+    }
+}
+
+@media(min-width: 1200px) {
+    @include encabezados(2.5em);
+    body {
+        background-color: yellow;
+    }
+}
